@@ -220,12 +220,18 @@ body {
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
+    gap: 12px;
+}
+
+@media (max-width: 500px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .skill-item {
     text-align: center;
-    padding: 16px 8px;
+    padding: 12px 8px;
     background: var(--bg-primary);
     border-radius: 8px;
 }
