@@ -3,205 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>孙新成 | 个人简历</title>
+    <title>孙新成 | 作品集</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#" class="nav-logo">孙新成</a>
             <ul class="nav-links">
-                <li><a href="#about">简历</a></li>
-                <li><a href="#works">作品</a></li>
-                <li><a href="#contact">联系</a></li>
+                <li><a href="#works" class="nav-link">作品</a></li>
+                <li><a href="#about" class="nav-link">关于</a></li>
+                <li><a href="#contact" class="nav-link">联系</a></li>
             </ul>
+            <button class="mobile-menu" aria-label="菜单">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
-            <div class="avatar-container">
-                <img src="assets/avatar.jpg" alt="孙新成" class="avatar">
+            <div class="hero-avatar-wrapper">
+                <img src="assets/avatar.jpg" alt="孙新成" class="hero-avatar">
             </div>
-            <h1 class="hero-name">孙新成</h1>
-            <p class="hero-title">财务主管 · 影像爱好者</p>
-            <div class="hero-tags">
-                <span class="hero-tag">中铁建设集团</span>
-                <span class="hero-tag">西南交通大学</span>
-            </div>
-            <a href="#about" class="btn btn-primary">查看简历</a>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">个人简历</h2>
-            
-            <div class="resume-card">
-                <h3 class="resume-label">教育背景</h3>
-                <div class="resume-content">
-                    <div class="resume-item">
-                        <div class="resume-item-header">
-                            <span class="resume-school">西南交通大学</span>
-                            <span class="resume-date">2021年 本科</span>
-                        </div>
-                        <div class="resume-desc">经济学专业</div>
+            <div class="hero-text">
+                <h1 class="hero-name">孙新成</h1>
+                <p class="hero-bio">影像创作者 · 摄影器材玩家 · 军事科技撰稿人</p>
+                <p class="hero-tagline">用镜头和文字记录这个世界的每一个细节</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-num">13年+</span>
+                        <span class="stat-label">摄影经验</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">7篇</span>
+                        <span class="stat-label">原创作品</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">3个</span>
+                        <span class="stat-label">内容平台</span>
                     </div>
                 </div>
             </div>
-
-            <div class="resume-card">
-                <h3 class="resume-label">工作经验</h3>
-                <div class="resume-content">
-                    <div class="resume-item">
-                        <div class="resume-item-header">
-                            <span class="resume-school">中铁建设集团有限公司</span>
-                            <span class="resume-date">2021年 - 至今</span>
-                        </div>
-                        <div class="resume-desc">财务主管</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="resume-card">
-                <h3 class="resume-label">核心技能</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <span class="skill-icon">📷</span>
-                        <span class="skill-name">摄影</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">🎬</span>
-                        <span class="skill-name">视频剪辑</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">💻</span>
-                        <span class="skill-name">PC硬件</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">📊</span>
-                        <span class="skill-name">财务管理</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">🖥️</span>
-                        <span class="skill-name">Office</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">🎨</span>
-                        <span class="skill-name">PS/LR</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">🤖</span>
-                        <span class="skill-name">AI工具</span>
-                    </div>
-                    <div class="skill-item">
-                        <span class="skill-icon">☁️</span>
-                        <span class="skill-name">部署</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="resume-card">
-                <h3 class="resume-label">设备熟悉度</h3>
-                <div class="resume-content">
-                    <p class="resume-desc">熟悉索尼、佳能、尼康、富士等主流厂商摄影器材，对相机、镜头、配件有深入了解和使用经验。</p>
-                </div>
-            </div>
-
-            <div class="resume-card">
-                <h3 class="resume-label">个人爱好</h3>
-                <div class="resume-content">
-                    <p class="resume-desc">拍鸟、航展拍摄、胶片相机收藏、桌面搭建、数码产品评测</p>
-                </div>
-            </div>
+            <a href="#works" class="scroll-indicator">
+                <span>浏览作品</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+            </a>
         </div>
     </section>
 
     <section id="works" class="section">
         <div class="container">
-            <h2 class="section-title">作品展示</h2>
-            <p class="section-desc">持续在微信公众号、微博、小红书平台更新影像内容</p>
+            <div class="section-header">
+                <h2 class="section-title">精选作品</h2>
+                <p class="section-desc">涉及军事技术、摄影器材、航展纪实等领域</p>
+            </div>
             <div class="works-grid">
-                <article class="work-card">
-                    <div class="work-cover" style="background-image: url('assets/an70.jpg'); background-size: cover; background-position: center;">
+                <article class="work-card" data-category="military">
+                    <div class="work-cover">
+                        <img src="assets/an70.jpg" alt="扭矩的博弈">
                     </div>
-                    <div class="work-info">
+                    <div class="work-body">
+                        <span class="work-badge">军事技术</span>
                         <h3 class="work-title">扭矩的博弈：世界共轴反桨军用飞机</h3>
-                        <p class="work-desc">微信公众号深度技术文章</p>
-                        <a href="https://mp.weixin.qq.com/s/d4wJVNwV4623UQVXkG22oA" target="_blank" class="work-link">查看 →</a>
+                        <p class="work-summary">从二战到冷战，共轴反桨技术的完整技术史</p>
+                        <a href="https://mp.weixin.qq.com/s/d4wJVNwV4623UQVXkG22oA" target="_blank" class="work-link">阅读全文</a>
                     </div>
                 </article>
 
-                <article class="work-card">
-                    <div class="work-cover" style="background-image: url('assets/huidebeidao.jpg'); background-size: cover; background-position: center;">
+                <article class="work-card" data-category="military">
+                    <div class="work-cover">
+                        <img src="assets/huidebeidao.jpg" alt="惠德贝岛级登陆舰">
                     </div>
-                    <div class="work-info">
+                    <div class="work-body">
+                        <span class="work-badge">军事技术</span>
                         <h3 class="work-title">惠德贝岛级登陆舰发展史</h3>
-                        <p class="work-desc">微信公众号深度技术文章</p>
-                        <a href="https://mp.weixin.qq.com/s/IOG_R7pTBq3PSUOr9YU7Eg" target="_blank" class="work-link">查看 →</a>
+                        <p class="work-summary">美国两栖作战力量的中流砥柱</p>
+                        <a href="https://mp.weixin.qq.com/s/IOG_R7pTBq3PSUOr9YU7Eg" target="_blank" class="work-link">阅读全文</a>
                     </div>
                 </article>
 
-                <article class="work-card">
-                    <div class="work-cover" style="background-image: url('assets/nk12.jpg'); background-size: cover; background-position: center;">
+                <article class="work-card" data-category="military">
+                    <div class="work-cover">
+                        <img src="assets/nk12.jpg" alt="NK-12涡桨发动机">
                     </div>
-                    <div class="work-info">
-                        <h3 class="work-title">库兹涅佐夫NK-12涡桨发动机</h3>
-                        <p class="work-desc">微信公众号深度技术文章</p>
-                        <a href="https://mp.weixin.qq.com/s/Fmv5tCIMSG7nXy156gYcHA" target="_blank" class="work-link">查看 →</a>
-                    </div>
-                </article>
-
-                <article class="work-card">
-                    <div class="work-cover" style="background-image: url('assets/wezhuoshi.jpg'); background-size: cover; background-position: center;">
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">唯卓仕2倍增距镜体验</h3>
-                        <p class="work-desc">微博实测分���</p>
-                        <a href="https://weibo.com/ttarticle/p/show?id=2309405263732942176269" target="_blank" class="work-link">查看 →</a>
+                    <div class="work-body">
+                        <span class="work-badge">军事技术</span>
+                        <h3 class="work-title">库兹涅佐夫NK-12涡桨发动机发展全史</h3>
+                        <p class="work-summary">人类历史上最强大的涡桨发动机传奇</p>
+                        <a href="https://mp.weixin.qq.com/s/Fmv5tCIMSG7nXy156gYcHA" target="_blank" class="work-link">阅读全文</a>
                     </div>
                 </article>
 
-                <article class="work-card">
-                    <div class="work-cover" style="background-image: url('assets/zhuhaihangzhan.jpg'); background-size: cover; background-position: center;">
+                <article class="work-card" data-category="military">
+                    <div class="work-cover" style="background: linear-gradient(135deg, #1a1a3e 0%, #2d1b69 100%);">
+                        <span class="work-cover-icon">🚁</span>
                     </div>
-                    <div class="work-info">
+                    <div class="work-body">
+                        <span class="work-badge">军事技术</span>
+                        <h3 class="work-title">混合推进直升机：高速飞行的航空技术史</h3>
+                        <p class="work-summary">从倾转旋翼到复合式直升机的百年探索</p>
+                        <a href="https://mp.weixin.qq.com/s/HihyvoXSEFIWUQy7gsiMSw" target="_blank" class="work-link">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="work-card" data-category="photography">
+                    <div class="work-cover">
+                        <img src="assets/wezhuoshi.jpg" alt="唯卓仕增距镜">
+                    </div>
+                    <div class="work-body">
+                        <span class="work-badge">摄影器材</span>
+                        <h3 class="work-title">唯卓仕索尼卡口2倍增距镜真实体验</h3>
+                        <p class="work-summary">千元级增距镜，拍鸟爱好者的性价比之选</p>
+                        <a href="https://weibo.com/ttarticle/p/show?id=2309405263732942176269" target="_blank" class="work-link">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="work-card" data-category="photography">
+                    <div class="work-cover">
+                        <img src="assets/jingshi.jpg" alt="京瓷武士Z">
+                    </div>
+                    <div class="work-body">
+                        <span class="work-badge">摄影器材</span>
+                        <h3 class="work-title">我在2026年与1989年的相机对话</h3>
+                        <p class="work-summary">京瓷武士Z半格胶片机的一年使用体验</p>
+                        <a href="https://mp.weixin.qq.com/s/qWuqT9eUhCnX5sYYRcAVhw" target="_blank" class="work-link">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="work-card" data-category="photography">
+                    <div class="work-cover">
+                        <img src="assets/miniled.jpg" alt="桌面搭建">
+                    </div>
+                    <div class="work-body">
+                        <span class="work-badge">数码体验</span>
+                        <h3 class="work-title">桌面终极方案：65寸MiniLED电视上桌</h3>
+                        <p class="work-summary">把电视当显示器，大就是王道</p>
+                        <a href="https://mp.weixin.qq.com/s/U8nL4NuMtyaghXdioX_MsA" target="_blank" class="work-link">阅读全文</a>
+                    </div>
+                </article>
+
+                <article class="work-card" data-category="photography">
+                    <div class="work-cover">
+                        <img src="assets/zhuhaihangzhan.jpg" alt="珠海航展">
+                    </div>
+                    <div class="work-body">
+                        <span class="work-badge">航展纪实</span>
                         <h3 class="work-title">2024珠海航展</h3>
-                        <p class="work-desc">小红书航展拍摄</p>
-                        <a href="https://www.xiaohongshu.com/discovery/item/673b35660000000002029275" target="_blank" class="work-link">查看 →</a>
-                    </div>
-                </article>
-
-                <article class="work-card">
-                    <div class="work-cover" style="background-image: url('assets/jingshi.jpg'); background-size: cover; background-position: center;">
-                    </div>
-                    <div class="work-info">
-                        <h3 class="work-title">京瓷武士Z胶片相机</h3>
-                        <p class="work-desc">微信公众号相机分享</p>
-                        <a href="https://mp.weixin.qq.com/s/qWuqT9eUhCnX5sYYRcAVhw" target="_blank" class="work-link">查看 →</a>
+                        <p class="work-summary">第15届中国航展拍摄记录</p>
+                        <a href="https://www.xiaohongshu.com/discovery/item/673b35660000000002029275" target="_blank" class="work-link">阅读全文</a>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="about" class="section">
         <div class="container">
-            <h2 class="section-title">联系我</h2>
-            <div class="contact-content">
-                <p class="contact-email">962857425@qq.com</p>
-                <a href="mailto:962857425@qq.com" class="btn btn-primary">发送邮件</a>
+            <div class="section-header">
+                <h2 class="section-title">关于我</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <span class="about-icon">🎓</span>
+                    <h3>教育</h3>
+                    <p>西南交通大学 · 经济学<br><small>2021届本科</small></p>
+                </div>
+                <div class="about-card">
+                    <span class="about-icon">💼</span>
+                    <h3>职业</h3>
+                    <p>中铁建设集团有限公司<br><small>财务主管 · 2021年至今</small></p>
+                </div>
+                <div class="about-card">
+                    <span class="about-icon">📷</span>
+                    <h3>摄影</h3>
+                    <p>13年+摄影经验<br><small>熟悉主流器材与后期工具</small></p>
+                </div>
+                <div class="about-card">
+                    <span class="about-icon">✍️</span>
+                    <h3>写作</h3>
+                    <p>军事技术历史撰稿<br><small>微信公众号·微博·小红书</small></p>
+                </div>
+                <div class="about-card">
+                    <span class="about-icon">🛠️</span>
+                    <h3>技能</h3>
+                    <p>PS / LR / PR / Office<br><small>AI工具应用与部署</small></p>
+                </div>
+                <div class="about-card">
+                    <span class="about-icon">🤝</span>
+                    <h3>合作</h3>
+                    <p>欢迎约稿与合作<br><small>摄影 · 撰稿 · 评测</small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">联系我</h2>
+            </div>
+            <div class="contact-card">
+                <div class="contact-item">
+                    <span class="contact-label">邮箱</span>
+                    <a href="mailto:962857425@qq.com" class="contact-value">962857425@qq.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">微信公众号</span>
+                    <span class="contact-value">阿生的生活闲侃</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">微博</span>
+                    <a href="https://weibo.com/u/2324652254" target="_blank" class="contact-value">@Hazard皓晨</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">小红书</span>
+                    <a href="https://www.xiaohongshu.com/user/profile/64b6c0f6000000001403b3c7" target="_blank" class="contact-value">@Hazard</a>
+                </div>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 孙新成. 所有权利保留。</p>
+            <p>&copy; 2026 孙新成 · 用镜头丈量世界</p>
         </div>
     </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        const cards = document.querySelectorAll('.work-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+        cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
 </body>
 </html>
