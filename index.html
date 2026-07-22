@@ -1,357 +1,446 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>孙新成 | 作品集</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>孙新成 | 影像创作者 · 军事科技撰稿人</title>
+
+    <!-- SEO -->
+    <meta name="description" content="孙新成的个人作品集：15年+摄影经验的影像创作者、摄影器材玩家与军事科技撰稿人。精选军事技术、摄影器材、数码体验与航展纪实等原创文章。">
+    <meta name="keywords" content="孙新成,摄影,军事科技,撰稿人,航空,航展,摄影器材,作品集">
+    <meta name="author" content="孙新成">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hazardsun.github.io/personal-portfolio/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="profile">
+    <meta property="og:locale" content="zh_CN">
+    <meta property="og:site_name" content="孙新成 | 作品集">
+    <meta property="og:title" content="孙新成 | 影像创作者 · 军事科技撰稿人">
+    <meta property="og:description" content="用镜头和文字记录这个世界的每一个细节——军事技术、摄影器材、数码体验、航展纪实。">
+    <meta property="og:url" content="https://hazardsun.github.io/personal-portfolio/">
+    <meta property="og:image" content="https://hazardsun.github.io/personal-portfolio/assets/avatar.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="孙新成 | 影像创作者 · 军事科技撰稿人">
+    <meta name="twitter:description" content="用镜头和文字记录这个世界的每一个细节。">
+    <meta name="twitter:image" content="https://hazardsun.github.io/personal-portfolio/assets/avatar.jpg">
+
+    <!-- 主题色（跟随系统） -->
+    <meta name="theme-color" content="#f8f9fc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f0f14" media="(prefers-color-scheme: dark)">
+
+    <!-- 图标 -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="styles.min.css">
+
+    <!-- 主题初始化：首屏渲染前应用已保存/系统主题，避免闪烁 -->
+    <script>
+        (function () {
+            var t = null;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (t !== 'light' && t !== 'dark') {
+                t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+            }
+            document.documentElement.dataset.theme = t;
+        })();
+    </script>
+
+    <!-- 结构化数据 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "孙新成",
+        "url": "https://hazardsun.github.io/personal-portfolio/",
+        "image": "https://hazardsun.github.io/personal-portfolio/assets/avatar.jpg",
+        "description": "影像创作者 · 摄影器材玩家 · 军事科技撰稿人",
+        "jobTitle": "财务主管",
+        "worksFor": { "@type": "Organization", "name": "中铁建设集团有限公司" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "西南交通大学" },
+        "sameAs": [
+            "https://weibo.com/u/2324652254",
+            "https://www.xiaohongshu.com/user/profile/64b6c0f6000000001403b3c7"
+        ]
+    }
+    </script>
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">孙新成</a>
-            <ul class="nav-links">
+    <a class="skip-link" href="#main">跳转到主要内容</a>
+
+    <header class="navbar" id="navbar">
+        <nav class="nav-container" aria-label="主导航">
+            <a href="#top" class="nav-logo">孙新成</a>
+            <ul class="nav-links" id="nav-menu">
                 <li><a href="#works" class="nav-link">作品</a></li>
                 <li><a href="#about" class="nav-link">关于</a></li>
                 <li><a href="#contact" class="nav-link">联系</a></li>
             </ul>
-            <button class="mobile-menu" aria-label="菜单">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="hero-content">
-            <div class="hero-avatar-wrapper">
-                <img src="assets/avatar.jpg" alt="孙新成" class="hero-avatar">
+            <div class="nav-actions">
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="切换深色模式" aria-pressed="false">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button type="button" class="mobile-menu" id="mobile-menu" aria-label="打开菜单" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
-            <div class="hero-text">
-                <h1 class="hero-name">孙新成</h1>
-                <p class="hero-bio">影像创作者 · 摄影器材玩家 · 军事科技撰稿人</p>
-                <p class="hero-tagline">用镜头和文字记录这个世界的每一个细节</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-num">15年+</span>
-                        <span class="stat-label">摄影经验</span>
-                    </div>
-                    <div class="stat">
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero" id="top" aria-labelledby="hero-title">
+            <div class="hero-content">
+                <div class="hero-avatar-wrapper">
+                    <img src="assets/avatar.jpg" alt="孙新成肖像照" class="hero-avatar" width="343" height="480" fetchpriority="high" decoding="async">
+                </div>
+                <div class="hero-text">
+                    <h1 class="hero-name" id="hero-title">孙新成</h1>
+                    <p class="hero-bio">影像创作者 · 摄影器材玩家 · 军事科技撰稿人</p>
+                    <p class="hero-tagline">用镜头和文字记录这个世界的每一个细节</p>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <span class="stat-num">15年+</span>
+                            <span class="stat-label">摄影经验</span>
+                        </div>
+                        <div class="stat">
                             <span class="stat-num">14篇</span>
-                        <span class="stat-label">原创作品</span>
+                            <span class="stat-label">原创作品</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">3个</span>
+                            <span class="stat-label">内容平台</span>
+                        </div>
                     </div>
-                    <div class="stat">
-                        <span class="stat-num">3个</span>
-                        <span class="stat-label">内容平台</span>
+                </div>
+                <a href="#works" class="scroll-indicator">
+                    <span>浏览作品</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+                </a>
+            </div>
+        </section>
+
+        <section id="works" class="section" aria-labelledby="works-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" id="works-title">精选作品</h2>
+                    <p class="section-desc">军事技术 · 摄影器材 · 数码体验 · 航展纪实</p>
+                </div>
+
+                <div class="works-category">
+                    <h3 class="category-title">军事技术</h3>
+                    <div class="works-grid">
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/an70.jpg" alt="扭矩的博弈" width="1080" height="720" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">扭矩的博弈：世界共轴反桨军用飞机</h4>
+                                <p class="work-summary">从二战到冷战，共轴反桨技术的完整技术史</p>
+                                <a href="https://mp.weixin.qq.com/s/d4wJVNwV4623UQVXkG22oA" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/huidebeidao.jpg" alt="惠德贝岛级登陆舰" width="1080" height="684" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">惠德贝岛级登陆舰发展史</h4>
+                                <p class="work-summary">美国两栖作战力量的中流砥柱</p>
+                                <a href="https://mp.weixin.qq.com/s/IOG_R7pTBq3PSUOr9YU7Eg" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/nk12.jpg" alt="NK-12涡桨发动机" width="1080" height="720" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">库兹涅佐夫NK-12涡桨发动机发展全史</h4>
+                                <p class="work-summary">人类历史上最强大的涡桨发动机传奇</p>
+                                <a href="https://mp.weixin.qq.com/s/Fmv5tCIMSG7nXy156gYcHA" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/hunhetuisheng.jpg" alt="混合推进直升机" width="1080" height="715" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">混合推进直升机：高速飞行的航空技术史</h4>
+                                <p class="work-summary">从倾转旋翼到复合式直升机的百年探索</p>
+                                <a href="https://mp.weixin.qq.com/s/HihyvoXSEFIWUQy7gsiMSw" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/oddengine.jpg" alt="奇数发动机军用飞机" width="1080" height="733" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">三发、五发、七发、九发——那些不走寻常路的军用飞机</h4>
+                                <p class="work-summary">奇数发动机军用飞机的百年技术史</p>
+                                <a href="https://mp.weixin.qq.com/s/sFLjtBoL4pijsgdv1EL0pQ" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/russian-civil-aviation.jpg" alt="俄罗斯民用航空" width="1200" height="510" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">俄罗斯民用航空百年沉浮</h4>
+                                <p class="work-summary">从Dobrolet到制裁时代，俄罗斯民航工业的百年技术史</p>
+                                <a href="https://mp.weixin.qq.com/s/BiLEpoDRMWCxkXUM7oj2SA" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="works-category">
+                    <h3 class="category-title">摄影器材</h3>
+                    <div class="works-grid">
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/wezhuoshi.jpg" alt="唯卓仕增距镜" width="1200" height="800" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">唯卓仕索尼卡口2倍增距镜真实体验</h4>
+                                <p class="work-summary">千元级增距镜，拍鸟爱好者的性价比之选</p>
+                                <a href="https://weibo.com/ttarticle/p/show?id=2309405263732942176269" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/rx10m3.jpg" alt="索尼RX10M3" width="1200" height="510" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">一个型号我买了两次——索尼RX10M3的回头客体验</h4>
+                                <p class="work-summary">时隔多年再次购入，一英寸超长焦相机的深度体验</p>
+                                <a href="https://mp.weixin.qq.com/s/2IHl_6hMP33iDRu8ATagzg" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/jingshi.jpg" alt="京瓷武士Z" width="1080" height="720" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">我在2026年与1989年的相机对话</h4>
+                                <p class="work-summary">京瓷武士Z半格胶片机的一年使用体验</p>
+                                <a href="https://mp.weixin.qq.com/s/qWuqT9eUhCnX5sYYRcAVhw" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="works-category">
+                    <h3 class="category-title">数码体验</h3>
+                    <div class="works-grid">
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/miniled.jpg" alt="桌面搭建" width="1080" height="810" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">桌面终极方案：65寸MiniLED电视上桌</h4>
+                                <p class="work-summary">把电视当显示器，大就是王道</p>
+                                <a href="https://mp.weixin.qq.com/s/U8nL4NuMtyaghXdioX_MsA" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/nas.jpg" alt="NAS搭建" width="1080" height="810" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">2025年阿生的个人NAS搭建——硬件篇</h4>
+                                <p class="work-summary">从零开始DIY一台家庭NAS</p>
+                                <a href="https://mp.weixin.qq.com/s/LP50IC8v3krbn8WC5hSjQg" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/openclaw-deploy.jpg" alt="OpenClaw部署" width="993" height="422" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">从零开始：我的OpenClaw部署实战记</h4>
+                                <p class="work-summary">从二手笔记本到飞书机器人，AI助手部署全记录</p>
+                                <a href="https://mp.weixin.qq.com/s/RXfzok0o0a5BAmD-6Z5L0A" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
+                <div class="works-category">
+                    <h3 class="category-title">航展纪实</h3>
+                    <div class="works-grid">
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/zhuhaihangzhan.jpg" alt="珠海航展" width="1200" height="800" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">2024珠海航展</h4>
+                                <p class="work-summary">第15届中国航展拍摄记录</p>
+                                <a href="https://www.xiaohongshu.com/discovery/item/673b35660000000002029275" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/zhuhaihangzhan2.jpg" alt="2024珠海航展" width="1200" height="800" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">2024珠海航展（二）</h4>
+                                <p class="work-summary">航展精彩瞬间合集</p>
+                                <a href="https://www.xiaohongshu.com/discovery/item/673df8930000000007038a31" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="work-card">
+                            <div class="work-cover">
+                                <img src="assets/baiyun.jpg" alt="白云T3观景平台" width="1200" height="800" loading="lazy" decoding="async">
+                            </div>
+                            <div class="work-body">
+                                <h4 class="work-title">广州白云机场T3观景平台</h4>
+                                <p class="work-summary">拍机好去处</p>
+                                <a href="https://www.xiaohongshu.com/discovery/item/69ad7d6a000000002202ce38" target="_blank" rel="noopener noreferrer" class="work-link">
+                                    <span>阅读全文</span>
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                                </a>
+                            </div>
+                        </article>
                     </div>
                 </div>
             </div>
-            <a href="#works" class="scroll-indicator">
-                <span>浏览作品</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
-            </a>
-        </div>
-    </section>
+        </section>
 
-    <section id="works" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">精选作品</h2>
-                <p class="section-desc">军事技术 · 摄影器材 · 数码体验 · 航展纪实</p>
-            </div>
-
-            <div class="works-category">
-                <h3 class="category-title">军事技术</h3>
-                <div class="works-grid">
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/an70.jpg" alt="扭矩的博弈">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">扭矩的博弈：世界共轴反桨军用飞机</h3>
-                            <p class="work-summary">从二战到冷战，共轴反桨技术的完整技术史</p>
-                            <a href="https://mp.weixin.qq.com/s/d4wJVNwV4623UQVXkG22oA" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/huidebeidao.jpg" alt="惠德贝岛级登陆舰">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">惠德贝岛级登陆舰发展史</h3>
-                            <p class="work-summary">美国两栖作战力量的中流砥柱</p>
-                            <a href="https://mp.weixin.qq.com/s/IOG_R7pTBq3PSUOr9YU7Eg" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/nk12.jpg" alt="NK-12涡桨发动机">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">库兹涅佐夫NK-12涡桨发动机发展全史</h3>
-                            <p class="work-summary">人类历史上最强大的涡桨发动机传奇</p>
-                            <a href="https://mp.weixin.qq.com/s/Fmv5tCIMSG7nXy156gYcHA" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/hunhetuisheng.jpg" alt="混合推进直升机">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">混合推进直升机：高速飞行的航空技术史</h3>
-                            <p class="work-summary">从倾转旋翼到复合式直升机的百年探索</p>
-                            <a href="https://mp.weixin.qq.com/s/HihyvoXSEFIWUQy7gsiMSw" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/oddengine.jpg" alt="奇数发动机军用飞机">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">三发、五发、七发、九发——那些不走寻常路的军用飞机</h3>
-                            <p class="work-summary">奇数发动机军用飞机的百年技术史</p>
-                            <a href="https://mp.weixin.qq.com/s/sFLjtBoL4pijsgdv1EL0pQ" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/russian-civil-aviation.jpg" alt="俄罗斯民用航空">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">俄罗斯民用航空百年沉浮</h3>
-                            <p class="work-summary">从Dobrolet到制裁时代，俄罗斯民航工业的百年技术史</p>
-                            <a href="https://mp.weixin.qq.com/s/BiLEpoDRMWCxkXUM7oj2SA" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" id="about-title">关于我</h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <span class="about-icon" aria-hidden="true">🎓</span>
+                        <h3>教育</h3>
+                        <p>西南交通大学 · 经济学<br><small>2021届本科</small></p>
+                    </div>
+                    <div class="about-card">
+                        <span class="about-icon" aria-hidden="true">💼</span>
+                        <h3>职业</h3>
+                        <p>中铁建设集团有限公司<br><small>财务主管 · 2021年至今</small></p>
+                    </div>
+                    <div class="about-card">
+                        <span class="about-icon" aria-hidden="true">📷</span>
+                        <h3>摄影</h3>
+                        <p>15年+摄影经验<br><small>熟悉主流器材与后期工具</small></p>
+                    </div>
+                    <div class="about-card">
+                        <span class="about-icon" aria-hidden="true">✍️</span>
+                        <h3>写作</h3>
+                        <p>军事技术历史撰稿<br><small>微信公众号·微博·小红书</small></p>
+                    </div>
+                    <div class="about-card">
+                        <span class="about-icon" aria-hidden="true">🛠️</span>
+                        <h3>技能</h3>
+                        <p>PS / LR / PR / Office<br><small>AI工具应用与部署</small></p>
+                    </div>
+                    <div class="about-card">
+                        <span class="about-icon" aria-hidden="true">🤝</span>
+                        <h3>合作</h3>
+                        <p>欢迎约稿与合作<br><small>摄影 · 撰稿 · 评测</small></p>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="works-category">
-                <h3 class="category-title">摄影器材</h3>
-                <div class="works-grid">
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/wezhuoshi.jpg" alt="唯卓仕增距镜">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">唯卓仕索尼卡口2倍增距镜真实体验</h3>
-                            <p class="work-summary">千元级增距镜，拍鸟爱好者的性价比之选</p>
-                            <a href="https://weibo.com/ttarticle/p/show?id=2309405263732942176269" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/rx10m3.jpg" alt="索尼RX10M3">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">一个型号我买了两次——索尼RX10M3的回头客体验</h3>
-                            <p class="work-summary">时隔多年再次购入，一英寸超长焦相机的深度体验</p>
-                            <a href="https://mp.weixin.qq.com/s/2IHl_6hMP33iDRu8ATagzg" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/jingshi.jpg" alt="京瓷武士Z">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">我在2026年与1989年的相机对话</h3>
-                            <p class="work-summary">京瓷武士Z半格胶片机的一年使用体验</p>
-                            <a href="https://mp.weixin.qq.com/s/qWuqT9eUhCnX5sYYRcAVhw" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
+        <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title" id="contact-title">联系我</h2>
                 </div>
+                <address class="contact-card">
+                    <div class="contact-item">
+                        <span class="contact-label">邮箱</span>
+                        <a href="mailto:962857425@qq.com" class="contact-value">962857425@qq.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">微信公众号</span>
+                        <span class="contact-value">阿生的生活闲侃</span>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">微博</span>
+                        <a href="https://weibo.com/u/2324652254" target="_blank" rel="noopener noreferrer" class="contact-value">@Hazard皓晨</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-label">小红书</span>
+                        <a href="https://www.xiaohongshu.com/user/profile/64b6c0f6000000001403b3c7" target="_blank" rel="noopener noreferrer" class="contact-value">@Hazard</a>
+                    </div>
+                </address>
             </div>
-
-            <div class="works-category">
-                <h3 class="category-title">数码体验</h3>
-                <div class="works-grid">
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/miniled.jpg" alt="桌面搭建">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">桌面终极方案：65寸MiniLED电视上桌</h3>
-                            <p class="work-summary">把电视当显示器，大就是王道</p>
-                            <a href="https://mp.weixin.qq.com/s/U8nL4NuMtyaghXdioX_MsA" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/nas.jpg" alt="NAS搭建">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">2025年阿生的个人NAS搭建——硬件篇</h3>
-                            <p class="work-summary">从零开始DIY一台家庭NAS</p>
-                            <a href="https://mp.weixin.qq.com/s/LP50IC8v3krbn8WC5hSjQg" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/openclaw-deploy.jpg" alt="OpenClaw部署">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">从零开始：我的OpenClaw部署实战记</h3>
-                            <p class="work-summary">从二手笔记本到飞书机器人，AI助手部署全记录</p>
-                            <a href="https://mp.weixin.qq.com/s/RXfzok0o0a5BAmD-6Z5L0A" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <div class="works-category">
-                <h3 class="category-title">航展纪实</h3>
-                <div class="works-grid">
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/zhuhaihangzhan.jpg" alt="珠海航展">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">2024珠海航展</h3>
-                            <p class="work-summary">第15届中国航展拍摄记录</p>
-                            <a href="https://www.xiaohongshu.com/discovery/item/673b35660000000002029275" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/zhuhaihangzhan2.jpg" alt="2024珠海航展">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">2024珠海航展（二）</h3>
-                            <p class="work-summary">航展精彩瞬间合集</p>
-                            <a href="https://www.xiaohongshu.com/discovery/item/673df8930000000007038a31" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-
-                    <article class="work-card">
-                        <div class="work-cover">
-                            <img src="assets/baiyun.jpg" alt="白云T3观景平台">
-                        </div>
-                        <div class="work-body">
-                            <h3 class="work-title">广州白云机场T3观景平台</h3>
-                            <p class="work-summary">拍机好去处</p>
-                            <a href="https://www.xiaohongshu.com/discovery/item/69ad7d6a000000002202ce38" target="_blank" class="work-link">阅读全文</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">关于我</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-card">
-                    <span class="about-icon">🎓</span>
-                    <h3>教育</h3>
-                    <p>西南交通大学 · 经济学<br><small>2021届本科</small></p>
-                </div>
-                <div class="about-card">
-                    <span class="about-icon">💼</span>
-                    <h3>职业</h3>
-                    <p>中铁建设集团有限公司<br><small>财务主管 · 2021年至今</small></p>
-                </div>
-                <div class="about-card">
-                    <span class="about-icon">📷</span>
-                    <h3>摄影</h3>
-                    <p>15年+摄影经验<br><small>熟悉主流器材与后期工具</small></p>
-                </div>
-                <div class="about-card">
-                    <span class="about-icon">✍️</span>
-                    <h3>写作</h3>
-                    <p>军事技术历史撰稿<br><small>微信公众号·微博·小红书</small></p>
-                </div>
-                <div class="about-card">
-                    <span class="about-icon">🛠️</span>
-                    <h3>技能</h3>
-                    <p>PS / LR / PR / Office<br><small>AI工具应用与部署</small></p>
-                </div>
-                <div class="about-card">
-                    <span class="about-icon">🤝</span>
-                    <h3>合作</h3>
-                    <p>欢迎约稿与合作<br><small>摄影 · 撰稿 · 评测</small></p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">联系我</h2>
-            </div>
-            <div class="contact-card">
-                <div class="contact-item">
-                    <span class="contact-label">邮箱</span>
-                    <a href="mailto:962857425@qq.com" class="contact-value">962857425@qq.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">微信公众号</span>
-                    <span class="contact-value">阿生的生活闲侃</span>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">微博</span>
-                    <a href="https://weibo.com/u/2324652254" target="_blank" class="contact-value">@Hazard皓晨</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-label">小红书</span>
-                    <a href="https://www.xiaohongshu.com/user/profile/64b6c0f6000000001403b3c7" target="_blank" class="contact-value">@Hazard</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 孙新成 · 用镜头丈量世界</p>
+            <p>&copy; <span id="year">2026</span> 孙新成 · 用镜头丈量世界</p>
         </div>
     </footer>
 
-    <script>
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
+    <button type="button" class="back-to-top" id="back-to-top" aria-label="返回顶部">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            });
-        });
-
-        const cards = document.querySelectorAll('.work-card');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-        cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-    </script>
+    <script src="main.min.js" defer></script>
 </body>
 </html>
