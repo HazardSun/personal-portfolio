@@ -270,6 +270,28 @@ body {
 .work-link svg { transition: var(--transition); }
 .work-link:hover svg { transform: translateX(4px); }
 
+/* ---------- 开源项目 ---------- */
+.projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.project-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 20px;
+    background: linear-gradient(135deg, var(--accent), #818cf8);
+    color: #fff;
+}
+.project-gh { width: 28px; height: 28px; opacity: 0.9; }
+.project-lang {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 500;
+    padding: 4px 10px; border-radius: 50px;
+    background: rgba(255, 255, 255, 0.18);
+}
+.lang-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.project-meta {
+    display: flex; gap: 16px; margin-bottom: 14px;
+    font-size: 13px; color: var(--text-muted);
+}
+.project-meta span { display: inline-flex; align-items: center; gap: 4px; }
+
 /* ---------- 关于 ---------- */
 .about-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .about-card {
@@ -374,6 +396,7 @@ a.contact-value:hover { color: #818cf8; }
     .hero-stats { gap: 24px; }
     .stat-num { font-size: 24px; }
     .works-grid { grid-template-columns: 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: repeat(2, 1fr); }
     .section { padding: 64px 0; }
 }
